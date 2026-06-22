@@ -1,0 +1,39 @@
+[project]
+name = "product-memory-agent"
+version = "0.1.0"
+description = "面向产品团队的知识检索、决策记忆与需求冲突检测 Agent。"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115,<1.0",
+    "langchain>=1.0,<2.0",
+    "langchain-openai>=1.0,<2.0",
+    "langfuse>=4.0,<5.0",
+    "langgraph>=1.0,<2.0",
+    "langgraph-checkpoint-sqlite>=3.0,<4.0",
+    "numpy>=2.0,<3.0",
+    "pydantic>=2.0,<3.0",
+    "python-docx>=1.2,<2.0",
+    "python-dotenv>=1.0,<2.0",
+    "uvicorn[standard]>=0.34,<1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0,<9.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = [
+    "evaluation_dataset_v2",
+    "step_01_retrieval",
+    "step_02_grounded_answer",
+    "step_03_product_memory",
+    "step_04_memory_aware_answer",
+    "step_05_conflict_detection",
+    "step_06_product_memory_agent",
+    "step_07_langfuse_evaluation",
+    "web_api",
+]
